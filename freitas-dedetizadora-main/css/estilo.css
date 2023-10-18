@@ -1,0 +1,536 @@
+/* Variaveis */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&family=Raleway:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+:root{
+    --bs-primary: #048444;
+    --bs-secondary: #009549;
+    --bs-dark: #005828;
+
+    --bs-primary-rgb: 4, 132, 68;
+    --bs-secondary-rgb: 0, 149, 73;
+
+    --bs-btn-font-family: 'League Spartan', sans-serif;
+    --bs-btn-font-weight: 700;
+}
+
+/* Elementos */
+html, body{
+    overflow-x: hidden;    
+}
+
+body{
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'League Spartan', sans-serif; 
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+}
+h1, .h1{font-size: calc(.75vw + 2.4em);} 
+h2, .h2{font-size: calc(.5vw + 2.1em);}
+h3, .h3{font-size: calc(.5vw + 1.7em);}
+h4, .h4{font-size: calc(.5vw + 1.3em);}
+h5, .h5{font-size:1.2em;}
+h6, .h6{font-size:1.0em;}
+
+a{
+    color: white; 
+}
+a:hover {
+    color: var(--bs-secondary);
+}
+
+header{
+    position: relative;
+    min-height: 150px;
+    background: white url(../arquivos/fundo-cabecalho.png) center top no-repeat;
+    box-shadow: 0px 3px 8px #000 !important;
+    z-index: 1;
+}
+
+header ul{  
+    gap: 5px;
+    align-items: baseline;
+}
+
+header ul li a{
+    font-weight: 800 !important;
+    color: #000 !important;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+header ul li a:hover{
+    color: white !important;
+}
+
+header ul li a:hover::after{
+    display: block;
+    content: "";
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    width: 100px;
+    left: 0;
+    bottom: 0;
+    animation: slide-up .2s linear;
+}
+
+label{
+    font-family: 'League Spartan', sans-serif;
+    font-size: 2em;
+    color: var(--bs-primary);
+}
+
+input:focus-visible{
+    outline: 1px solid var(--bs-primary);
+}
+
+input, .custom-select{
+    box-sizing: border-box;
+    border: none;
+    padding: 10px;
+    background-color: #DEE0E0;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.custom-select, .custom-select:focus-within, .custom-select:active{
+    border: 1px solid #DEE0E0 !important;
+}
+
+button[type="submit"]{
+    border: 0;
+    padding: 10px 20px;
+    width: 200px;
+    color:white;
+    background-color: var(--bs-primary);
+    font-family: 'League Spartan', sans-serif;;
+    font-size: 1.5em;
+    border-radius: 30px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    position: relative;
+    left: 50%;
+    transform: translatex(-50%);
+    box-shadow: 1px 1px 3px rgb(0,0,0);
+}
+
+button[type="submit"]:hover{
+    background-color: #131313;
+}
+
+@media (min-width: 768px){
+    header ul{
+        gap: 10px;
+    }
+    header ul li a{
+        padding: 5px 20px !important;
+    }
+    header ul li a:hover{
+        color: #048444 !important;
+    }
+    header ul li a:hover::after{
+        width: 80%;
+        left: calc(20% / 2);
+    }
+}
+
+@media (min-width: 1200px){
+    header ul{
+        gap: 20px;
+    }
+}
+
+@media (min-width: 768px){
+    header ul li a.nav-button{
+        background: radial-gradient(rgb(28, 28, 28), #0e0e0e);
+        color: white !important;
+        padding: 10px 20px !important;
+        transition: none;
+    }
+    header ul li a.nav-button:hover{
+        background-color: #000;
+        color: #048444 !important;
+    }
+    header ul li a.nav-button:hover::after{
+        content: none;
+    }
+}
+
+section{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media (min-width: 768px){
+    section{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (min-width: 1200px){
+    section{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+footer{
+    padding:  40px 0px;
+    background-color: var(--bs-dark);
+    color: white;
+    position: relative;
+}
+
+.social-media a{
+    font-size: 3em;
+    color: white;
+    transition: all ease 0.3s;
+}
+
+.social-media a:hover{
+    font-size: 3em;
+    color: #c9c9c9;
+    transform: scale(1.2);
+}
+
+/* Classes */
+
+.container-maxw{
+    margin: 0px 35px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+*:has(> .container-maxw){
+    display: flex;
+    justify-content: center;
+}
+
+*:has(> .sobreposicao){
+    position: relative;
+}
+
+.sobreposicao{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.sobreposicao ~ *{
+    position: relative;
+}
+
+.text-detail{
+    width: fit-content;
+    text-align: start;
+}
+
+.text-detail::after{
+    display: flex;
+    content: "";
+    width: 130%;
+    height: 3px;
+    background-color: white;
+    margin-top: 5px;
+    box-shadow: 1px 1px #000;
+}
+
+.text-detail-bg-primary::after{
+    background-color: var(--bs-primary);
+}
+
+.servico-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.servico-item img {
+    width: 100%;
+    transition: all .2s ease;
+}
+
+.servico-item img:hover{
+    transform: scale(1.05);
+}
+
+.shadow{
+    box-shadow: 2px 2px 5px 1px #000 !important;
+}
+
+.btn-orcamento{
+    background-color: #e5301a;
+    color: white;
+    border-radius: 20px;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.598);
+    transition: transform .3s ease-out;
+}
+
+.btn-orcamento:hover{
+    background-color: #d21900;
+    color: white;
+    transform: translateY(-10px);
+}
+
+.btn-orcamento:active{
+    background-color: #af1400 !important;
+    color: white !important;
+    border-color: transparent !important;
+}
+
+.checkbox-servico{
+    display: grid;
+}
+
+/* Inputs */
+
+.wraper-form{
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    align-items: center;
+    width: 47%;
+    min-width: 80px;
+    background-color: white !important;
+}@media (min-width: 768px){
+    .wraper-form{
+        width: 30%;
+    }
+}
+
+.wraper-form label{
+    width: 100%;
+    background-color: white;
+    font-size: 1em;
+}
+
+.wraper-form input{
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.wraper-form input::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; bottom: 0;
+    background-color: white;
+    border: 1px solid var(--bs-primary);
+}
+
+.wraper-form input:checked:after{
+    background: url(../arquivos/checkmark.png) center no-repeat;
+    background-size: cover;
+}
+
+.btn-whats{
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 99999999;
+    background-color: rgba(255, 255, 255, 0.212);
+    border: 1px solid black;
+    border-radius: 99999px;
+    padding: 5px 15px;
+    font-size: 30px;
+    color: black;
+    transition: bottom .2s ease;
+    animation: btn-whats 1.5s ease-in-out infinite alternate-reverse;
+}
+@media (min-width: 768px){
+    .btn-whats{
+        padding: 5px 19px;
+        font-size: 50px;
+    }
+}
+
+.btn-whats:hover{
+    color: black;
+    bottom: 25px;
+}
+
+.wrap-depoimentos{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: center;
+    gap: 25px;
+    padding: 0px 20px;
+}
+
+.wrap-depoimentos *{
+    min-width: 300px;
+    box-shadow: 2px 2px 5px 1px rgb(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+/* IDs */
+
+#sobre{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media (min-width: 768px){
+    #sobre{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+@media (min-width: 1200px){
+    #sobre{
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+}
+
+#capa-home, #capa-contato, #capa-blog{
+    height: calc(100vh - 150px);
+    background-size: cover;
+    background-position: -100px;
+}
+
+#capa-home h2, #capa-contato h2, #capa-blog h2{
+    font-size: calc(2vw + 3em);
+}
+
+#capa-home{
+    background: url(../arquivos/capa-home-2.jpg) center no-repeat white;
+    background-size: cover !important;
+}
+
+#capa-contato{
+    background: url(../arquivos/capa-contato.jpeg) center no-repeat white;
+}
+
+#capa-blog{
+    background: url(../arquivos/capa-blog.png) center no-repeat white;
+}
+
+#servicos{
+    min-height: 100vh;
+    background: url(../arquivos/fundo-servicos.png) no-repeat center;
+    background-size: cover;
+}
+
+#img-sobre{
+    width: 100%;
+    max-width: 300px;
+}
+
+#servicos-container > *{
+    width: 30%;
+    min-width: 180px;
+    max-width: 350px;
+}
+
+#detalhe-footer{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: calc(19vw);
+    max-height: 300px;
+    min-height: 200px;
+    z-index: 999;
+}
+
+#clientes h2{
+    position: relative;
+}
+
+@media (min-width: 768px){
+    #clientes h2::before{
+        --width: 300px;
+        content: "";
+        width: var(--width);
+        height: 5px;
+        background-color: var(--bs-primary);
+        position: absolute;
+        top: calc(50% - 8px);
+        left: calc(var(--width) * -1 - 20px);
+    }
+    #clientes h2::after{
+        --width: 300px;
+        content: "";
+        width: var(--width);
+        height: 5px;
+        background-color: var(--bs-primary);
+        position: absolute;
+        top: calc(50% - 8px);
+        right: calc(var(--width) * -1 - 20px);
+    }
+}
+/* Animações */
+
+@keyframes slide-up{
+    from{
+        bottom: -10px;
+    }
+    to{
+        bottom: 0;
+    }
+}
+
+@keyframes fade-in{
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+@keyframes btn-whats {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
+
+/* X-Small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+/* Medium devices (tablets, 768px and up) */
+/* Large devices (desktops, 992px and up) */
+/* X-Large devices (large desktops, 1200px and up) */
+/* XX-Large devices (larger desktops, 1400px and up) */
+
+@media (min-width: 576px){
+
+}
+
+@media (min-width: 768px){
+
+}
+
+@media (min-width: 992px){
+
+}
+
+@media (min-width: 1200px){
+
+}
+
+@media (min-width: 1400px) {
+
+}

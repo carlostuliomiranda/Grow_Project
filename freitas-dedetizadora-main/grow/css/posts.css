@@ -1,0 +1,156 @@
+#conteudo{
+    position: relative;
+    min-height: 20px;
+}
+
+#conteudo p{
+    margin: 0;
+    padding: 0;
+}
+
+#modal{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#modal::backdrop{
+    background-color: rgb(0, 0, 0,.5);
+}
+
+dialog{
+    max-height: 900px;
+}
+
+dialog .close{
+    position: absolute;
+    width: 40px;
+    text-align: center;
+    padding: 5px;
+    top: 10px;
+    right: 10px;
+    color: var(--gr-cinza);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-decoration: none;
+    background-color: rgb(255, 255, 255, 0.7);
+    border: 2px dashed var(--gr-laranja);
+    border-radius: 360px;
+}
+
+dialog .close:hover{
+    color: var(--gr-laranja) !important;
+}
+
+dialog button{
+    padding: 8px 20px;
+    font-weight: 500;
+    border: 1px solid var(--gr-cinza);
+    border-radius: 8px;
+    width: 150px;
+    align-self: center;
+    transition: all .2s ease;
+}
+
+dialog button:hover{
+    background-color: var(--gr-cinza);
+    color: white;
+}
+
+#container-imagens{
+    width: 100%;
+    background-color: #ececec;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#container-imagens #dentro{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#container-imagens #dentro *{
+    width: 10vw;
+    height: 10vw;
+    min-width: 80px;
+    max-width: 130px;
+    min-height: 80px;
+    max-height: 130px;
+    border: 1px solid var(--gr-laranja);
+    box-shadow: 1px 1px 3px black;
+    transition: transform 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+#container-imagens #fora{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-weight: 500;
+}
+
+#container-imagens #fora a{
+    cursor: pointer;
+    color: var(--gr-laranja);
+    text-decoration: underline;
+}
+
+#container-imagens #fora a:hover{
+    color: var(--gr-cinza);
+}
+
+#img-icone, #video-icone{
+    width: 250px !important;
+    height: 250px !important;
+    object-fit: cover;
+    object-position: center;
+}
+
+#btn-icone{
+    cursor: pointer;
+    width: fit-content;
+    border: 2px dashed var(--gr-laranja);
+    color: black;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 1.05em;
+    transition: all .1s ease;
+}
+
+#btn-icone:hover{
+    background-color: var(--gr-laranja);
+}
+
+form{
+    justify-content: center !important;
+}
+
+form button{
+    position: relative;
+    width: 50%;
+    max-width: 200px;
+    min-width: 100px;
+    background-color: var(--gr-laranja);
+    color: black;
+    font-weight: 500;
+    transition: all .3s ease;
+    padding: 5px 15px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+form button:hover{
+    cursor: pointer;
+    background-color: var(--gr-cinza);
+    color: var(--gr-laranja);
+}
+
+form #loading{
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
